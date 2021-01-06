@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Variable Types</title>
+    <style>
+      textarea { display: block; margin-bottom: 0.5rem; width: 20rem; background-color: #999999; border: none; font-family: monospace; }
+      .keyword { font-family: monospace; }
+    </style>
+  </head>
+  <body>
+    <h1>Variable Types</h1>
+    <h2 id="const">const (ES6)</h2>
+    <p><span class="keyword">const</span> can only be declared ONCE within its BLOCK scope and must be assigned at declaration. It cannot be reassigned.</p>
+    <textarea style="height: 3rem; ">const wontChange = 100;
+wontChange = 200;  // ERROR
+const wontChange = 'a';  // ERROR</textarea>
+    <p>objects and arrays cannot be redeclared, but can be altered.</p>
+    <textarea style="height: 7rem; ">const myObj = { a, b };
+myObj = { x, y };  // ERROR
+myObj.x = 4;  // OK
+
+const myArr = [ "fry" ];
+const myArr = [ "hamburger" ]; // ERROR
+myArr.push("cheeseburger");  // OK</textarea>
+    <h2 id="let">let (ES6)</h2>
+    <p><span class="keyword">let</span> is also BLOCK scoped, can be reassigned, but can NOT be redeclared in the same block.</p>
+    <textarea style="height: 2rem; ">let one = 1;
+one = 3;      // is now 3</textarea>
+    <textarea style="height: 4rem; width: 30rem; ">(function() {
+  let one = 1;
+  let one = 2;  // ERROR (redeclaration)
+})();</textarea>
+  </body>
+</html>
