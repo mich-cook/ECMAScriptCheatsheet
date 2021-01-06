@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Arrow Functions</title>
+    <style>
+      textarea { width: 20rem; background-color: #999999; border: none; font-family: monospace; }
+      .keyword { font-family: monospace; }
+    </style>
+  </head>
+  <body>
+    <p>With a few specific differences described below, this is mostly a way to rewrite functions without using the <span class="keyword">function</span> keyword.</p>
+    <p>Here's the first most direct translation: </p>
+    <textarea readonly="readonly">var double = function(x) {
+  return x * 2;
+}</textarea>
+    <textarea readonly="readonly">var double = (x) => { return x * 2; };</textarea>
+    <p>This can be simplified a few ways.</p>
+    <ul>
+      <li><p>First, for a simple returned value, the <span class="keyword">return</span> keyword is not necessary, but the braces must also be removed. Here's an example:</p>
+        <textarea readonly="readonly">var double = (x) => x * 2;</textarea></li>
+      <li><p>Second, for one and only one input var with no <a href="default-values.html">default value</a>, the parens around the input are not necessary:</p>
+        <textarea readonly="readonly">var double = x => x * 2;</textarea></li>
+      <li><p>Finally, these are usually written with a <a href="variable-types.html#const" class="keyword">const</a> to define the function:</p>
+        <textarea readonly="readonly">const double = x => x * 2;</textarea></li>
+    </ul>
+    <p><strong>Unnamed functions</strong> just start with the input var:</p>
+    <textarea readonly="readonly">x => x * 2;</textarea>
+    <p><strong>Zero arguments</strong> needs the return of parens around the arguments list:</p>
+    <textarea readonly="readonly">() => "hello!"; </textarea>
+    <p><strong>Multiple arguments</strong> need parens as well:</p>
+    <textarea readonly="readonly">(x, y) => x * y;</textarea>
+    <p><strong>Returning an object</strong> requires without <span class="keyword">return</span> requires wrapping the object with parens:</p>
+    <textarea readonly="readonly">(x, y) => ({ "x": x, "y": y });</textarea>
+
+
+
+  </body>
+</html>
