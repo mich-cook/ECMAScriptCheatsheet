@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Data Types</title>
+    <style>
+      textarea { width: 35rem; background-color: #999999; border: none; font-family: monospace; }
+      .keyword { font-family: monospace; }
+    </style>
+  </head>
+  <body>
+    <h1 id="bigint">BigInt</h1>
+    <p>Numbers beyond Number.MAX_SAFE_INTEGER</p>
+    <textarea style="height: 3rem; ">const notSoReallyBig = 5n;  // n suffix means BigInt
+const alsoNotSoBig = BigInt(22);  // all of these typeof to "bigint"
+const smallStringInt = BigInt("55"); // casts to 55n</textarea>
+    <p>Cannot mix Number and BigInt:</p>
+    <textarea style="height: 1rem; ">45n + 5; // ERROR</textarea>
+    <p>Obvious, but notice: BigInt and Number are different types, so strict comparisons WILL fail.</p>
+  </body>
+</html>
